@@ -26,6 +26,30 @@
                         </goals>
                     </execution>
                 </executions>
+              
+              <plugin>
+	<groupId>org.jfrog.buildinfo<\groupId>
+	<artifactId>artifactory-maven-plugin</artifactId>
+    <version>1.0.2-SNAPSHOT</version>
+	<inherited>false</inherited>
+	<executions>
+		<execution>
+			<id>build-info</id>
+			<goals>
+				<goal>publish</goal>
+			</goals>
+			<configuration>
+				<publisher>
+					<contextUrl></contextUrl>
+					<username>admin</username>
+					<password>password</password>
+					<repoKey>libs-release-local</repoKey>
+					<snapshotRepoKey>libs-release-local</snapshotRepoKey>
+				</publisher>
+			</configuration>
+		</execution>
+	</executions>
+</plugin>
             </plugin>
             <!-- deploy test jar -->
             <plugin>
@@ -80,5 +104,10 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
+<pluginRepositories>
+  <pluginRepository>
+    <id>Maven-Artifactory-Plugin</id>
+    <url>https://jcenter.bintray.com</url>
+  </pluginRepository>
+</pluginRepositories>
 </project>
