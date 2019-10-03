@@ -40,7 +40,7 @@
 			</goals>
 			<configuration>
 				<publisher>
-					<contextUrl></contextUrl>
+					<contextUrl>http://localhost:8081/artifactory</contextUrl>
 					<username>admin</username>
 					<password>password</password>
 					<repoKey>libs-release-local</repoKey>
